@@ -9,10 +9,6 @@ final formKey = GlobalKey<FormState>();
 bool isShowLogin = false;
 bool isShowRegister = false;
 
-void showLogin() {
-  
-}
-
 class Splash extends StatelessWidget {
   const Splash({super.key});
 
