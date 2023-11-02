@@ -1,39 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:app/tugas/uts/auth.dart';
- 
-void main() => runApp(const MyApp());
- 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+import 'package:app/tugas/camera/page/home_page.dart';
 
-  @override
-  State<MyApp> createState() => _MyAppState();
+void main() {
+  runApp(const MyApp());
 }
 
-class _MyAppState extends State<MyApp> {
-  Widget _homeWidget = const Splash();
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 10), () {
-      setState(() {
-        _homeWidget = const Auth();
-      });
-    });
-  }
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final brightness = MediaQuery.of(context).platformBrightness;
-
     return MaterialApp(
-      title: 'UTS',
+      title: 'Flutter Camera Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: brightness,
-      ),
-      home: _homeWidget,
+      theme: ThemeData.dark(),
+      home: const HomePage(),
     );
   }
 }
